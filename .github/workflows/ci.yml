@@ -17,11 +17,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clean and install dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm install --save-dev jest
 
-      - name: Install Jest (if not in package.json)
-        run: npm install --save-dev jest
+      - name: Fix Jest permissions (important)
+        run: chmod +x ./node_modules/.bin/jest
 
       - name: Run tests
         run: npx jest --verbose
