@@ -1,16 +1,11 @@
 {
-  "name": "temperature_converter",
+  "name": "temp-converter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "build": "echo Building Temperature Converter Project...",
-    "test": "jest"
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^30.2.0"
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
